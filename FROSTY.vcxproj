@@ -1,0 +1,261 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{EDEE63E8-381D-470F-90BD-AF33CCAA1E5E}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+    <ProjectName>DH</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>C:\Release\</OutDir>
+    <TargetName>memehook_debug</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>C:\OUT</OutDir>
+    <IncludePath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>C:\OUT</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;BLAZYP2C_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;NDEBUG;_WINDOWS;_USRDLL;BLAZYP2C_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Full</Optimization>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <FullProgramDatabaseFile>true</FullProgramDatabaseFile>
+      <GenerateMapFile>true</GenerateMapFile>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Color2.cpp" />
+    <ClCompile Include="CSX_Cvar.cpp" />
+    <ClCompile Include="CSX_Log.cpp" />
+    <ClCompile Include="CSX_Memory.cpp" />
+    <ClCompile Include="CSX_Utils.cpp" />
+    <ClCompile Include="Gui\Gui.cpp" />
+    <ClCompile Include="imguicolorpicker.cpp" />
+    <ClCompile Include="ImGui\examples\directx9_example\imgui_impl_dx9.cpp" />
+    <ClCompile Include="ImGui\imgui.cpp" />
+    <ClCompile Include="ImGui\imgui_draw.cpp" />
+    <ClCompile Include="SkinParser.cpp" />
+    <ClCompile Include="recvproxy.cpp" />
+    <ClCompile Include="Autowall.cpp" />
+    <ClCompile Include="Chams.cpp" />
+    <ClCompile Include="Configuration.cpp" />
+    <ClCompile Include="DLLMain.cpp" />
+    <ClCompile Include="EnginePrediction.cpp" />
+    <ClCompile Include="ESP.cpp" />
+    <ClCompile Include="Global.cpp" />
+    <ClCompile Include="GrenadePrediction.cpp" />
+    <ClCompile Include="Hooks.cpp" />
+    <ClCompile Include="Interfaces.cpp" />
+    <ClCompile Include="LagComp.cpp" />
+    <ClCompile Include="LegitBot.cpp" />
+    <ClCompile Include="MathFunctions.cpp" />
+    <ClCompile Include="memesets.cpp" />
+    <ClCompile Include="Misc.cpp" />
+    <ClCompile Include="NetVarManager.cpp" />
+    <ClCompile Include="RageBot.cpp" />
+    <ClCompile Include="Render.cpp" />
+    <ClCompile Include="Resolver2.cpp" />
+    <ClCompile Include="SkinChanger.cpp" />
+    <ClCompile Include="SpoofedConvar.cpp" />
+    <ClCompile Include="MiscFunctions.cpp" />
+    <ClCompile Include="Vector.cpp" />
+    <ClCompile Include="Vector4D.cpp" />
+    <ClCompile Include="VMatrix.cpp" />
+    <ClCompile Include="VMT.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="bulletshow.h" />
+    <ClInclude Include="Codex.h" />
+    <ClInclude Include="Color2.h" />
+    <ClInclude Include="config.h" />
+    <ClInclude Include="CSX.h" />
+    <ClInclude Include="CSX_Cvar.h" />
+    <ClInclude Include="CSX_Log.h" />
+    <ClInclude Include="CSX_Memory.h" />
+    <ClInclude Include="CSX_Utils.h" />
+    <ClInclude Include="DoPostScreenSpaceEffects.h" />
+    <ClInclude Include="dropboxes.h" />
+    <ClInclude Include="flashlight.h" />
+    <ClInclude Include="Gui\Gui.h" />
+    <ClInclude Include="Gui\memoryfonts.h" />
+    <ClInclude Include="ImGui\examples\directx9_example\imgui_impl_dx9.h" />
+    <ClInclude Include="ImGui\imconfig.h" />
+    <ClInclude Include="ImGui\imgui.h" />
+    <ClInclude Include="ImGui\imgui_internal.h" />
+    <ClInclude Include="ImGui\stb_rect_pack.h" />
+    <ClInclude Include="ImGui\stb_textedit.h" />
+    <ClInclude Include="ImGui\stb_truetype.h" />
+    <ClInclude Include="IsConnected.h" />
+    <ClInclude Include="IsHltv.h" />
+    <ClInclude Include="LBYBreaking.h" />
+    <ClInclude Include="Listener.h" />
+    <ClInclude Include="LocalInfo.h" />
+    <ClInclude Include="Logging.h" />
+    <ClInclude Include="SetupColors.h" />
+    <ClInclude Include="SkinParser.h" />
+    <ClInclude Include="QAngle.hpp" />
+    <ClInclude Include="Radar.h" />
+    <ClInclude Include="Ray_t.hpp" />
+    <ClInclude Include="recvproxy.h" />
+    <ClInclude Include="Autowall.h" />
+    <ClInclude Include="BaseClient.h" />
+    <ClInclude Include="bspflags.h" />
+    <ClInclude Include="Chams.h" />
+    <ClInclude Include="CommonIncludes.h" />
+    <ClInclude Include="Configuration.hpp" />
+    <ClInclude Include="CreateMove.h" />
+    <ClInclude Include="DrawModelExecute.h" />
+    <ClInclude Include="EngineClient.h" />
+    <ClInclude Include="EnginePrediction.h" />
+    <ClInclude Include="Entities.h" />
+    <ClInclude Include="ESP.h" />
+    <ClInclude Include="FindMDL.h" />
+    <ClInclude Include="FireEventClientSide.h" />
+    <ClInclude Include="FrameStageNotify.h" />
+    <ClInclude Include="Global.h" />
+    <ClInclude Include="GloveChanger.h" />
+    <ClInclude Include="GrenadePrediction.h" />
+    <ClInclude Include="HookIncludes.h" />
+    <ClInclude Include="Hooks.h" />
+    <ClInclude Include="HooksList.h" />
+    <ClInclude Include="InPrediction.h" />
+    <ClInclude Include="Interface.h" />
+    <ClInclude Include="Interfaces.h" />
+    <ClInclude Include="LagComp.h" />
+    <ClInclude Include="LegitBot.h" />
+    <ClInclude Include="Materials.h" />
+    <ClInclude Include="MathFunctions.h" />
+    <ClInclude Include="memesets.h" />
+    <ClInclude Include="MiscClasses.h" />
+    <ClInclude Include="MiscDefinitions.h" />
+    <ClInclude Include="Misc.h" />
+    <ClInclude Include="MovementRecorder.h" />
+    <ClInclude Include="NetVarManager.h" />
+    <ClInclude Include="OnScreenSizeChanged.h" />
+    <ClInclude Include="OverrideView.h" />
+    <ClInclude Include="PaintTraverse.h" />
+    <ClInclude Include="PlaySound.h" />
+    <ClInclude Include="PredictionSystem.h" />
+    <ClInclude Include="RageBot.h" />
+    <ClInclude Include="Render.h" />
+    <ClInclude Include="Resolver.h" />
+    <ClInclude Include="Resolver2.h" />
+    <ClInclude Include="Resolver3.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="SceneEnd.h" />
+    <ClInclude Include="SDK.h" />
+    <ClInclude Include="SkinChanger.h" />
+    <ClInclude Include="SL.h" />
+    <ClInclude Include="Sounds.h" />
+    <ClInclude Include="Strafer.h" />
+    <ClInclude Include="Surface.h" />
+    <ClInclude Include="SvCheatsGetBool.h" />
+    <ClInclude Include="TEXT.h" />
+    <ClInclude Include="MiscFunctions.h" />
+    <ClInclude Include="UtlBuffer.hpp" />
+    <ClInclude Include="UtlMemory.hpp" />
+    <ClInclude Include="UtlString.hpp" />
+    <ClInclude Include="UtlVector.hpp" />
+    <ClInclude Include="Variables.h" />
+    <ClInclude Include="Vector.hpp" />
+    <ClInclude Include="Vector2D.h" />
+    <ClInclude Include="Vector4D.hpp" />
+    <ClInclude Include="VMatrix.hpp" />
+    <ClInclude Include="VMT.h" />
+    <ClInclude Include="CSX_XorStr.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ImGui\LICENSE" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
