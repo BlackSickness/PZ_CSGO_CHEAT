@@ -13,14 +13,14 @@ DWORD
 dwMFL,
 dwSysFlags,
 dwSerial;
-#define My_HWID (79350847)
-#define David (1347633956)
-#define Rayan (1949350190)
-#define Tayeb (177890935)
-#define Saeed (-467700019)
-#define Waleed (-702422176)
-#define Hasan (-531590543)
-#define Nikushaa (316268315)
+#define My_HWID (123)
+#define David (123)
+#define Rayan (123)
+#define Tayeb (123)
+#define Saeed (123)
+#define Waleed (123)
+#define Hasan (123)
+#define Nikushaa (123)
 
 
 bool chk()
@@ -52,13 +52,13 @@ bool chk()
 bool on_dll_attach(void* base)
 {
 	
-	if (!chk())
-	{
+	//if (!chk())
+	//{
 
-		MessageBox(0, "Cheat Expired", "INFORMATION", MB_OK | MB_ICONERROR);
-		ExitProcess(1);
+		//MessageBox(0, "Cheat Expired", "INFORMATION", MB_OK | MB_ICONERROR);
+		//ExitProcess(1);
 
-	}
+	//}
 	
 	Interfaces::InitialiseInterfaces();
 	g_Netvars->GetNetvars();
